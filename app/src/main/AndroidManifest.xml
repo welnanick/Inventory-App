@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.nickwelna.inventoryapp">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".EditorActivity"
+            android:parentActivityName=".CatalogActivity"
+            android:theme="@style/EditorTheme" />
+
+        <provider
+            android:name=".data.InventoryProvider"
+            android:authorities="com.nickwelna.inventoryapp"
+            android:exported="false" />
     </application>
 
 </manifest>
